@@ -17,6 +17,7 @@ class WebhooksController < ActionController::API
     context.handle_global_keyword if reply_type == :global
     context.handle_interactive_reply if reply_type == :interactive
     context.handle_text_reply if reply_type == :text
+    context.handle_image_reply if reply_type == :image
 
     head :ok
   end
@@ -52,7 +53,8 @@ class WebhooksController < ActionController::API
       from: message[:from],
       msg_type: message[:type],
       msg_body: message.dig(:text, :body),
-      interactive_reply: message.dig(:interactive, :button_reply) || message.dig(:interactive, :list_reply)
+      interactive_reply: message.dig(:interactive, :button_reply) || message.dig(:interactive, :list_reply),
+      image_id: message.dig(:image, :id)
     }
   end
 end

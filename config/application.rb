@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module ShyanTrading
   class Application < Rails::Application
+    config.to_prepare do
+      Dir.glob(Rails.root.join('app/decorators/**/*.rb')).each { |c| require_dependency(c) }
+    end
+
     # config hosts allow any:
     config.hosts << /.*/
 

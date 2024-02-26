@@ -23,5 +23,21 @@ class Conversation < ApplicationRecord
   enum current_step: %w[
     at_lobby
     pending_name
+    pending_receipt_upload
+    pending_receipt_location
   ]
+
+  def self.lobby_menus
+    [
+      'Upload Receipt',
+      'Redeem Points'
+    ]
+  end
+
+  def self.prize_menus
+    [
+      '100 pts: RM10 TnG Reload',
+      '500 pts: RM50 TnG Reload'
+    ]
+  end
 end

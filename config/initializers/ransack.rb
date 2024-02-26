@@ -9,4 +9,9 @@ Ransack.configure do |config|
                                   },
                        validator: proc { |v| v.present? },
                        type: :string
+
+  def ransackable_associations(auth_object = nil)
+    Rails.logger.info('WITHIN RANSACK ASSOCIATION')
+    super + %w[impressionable]
+  end
 end

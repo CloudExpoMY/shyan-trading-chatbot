@@ -6,6 +6,7 @@
 #  email        :string
 #  full_name    :string
 #  phone_number :string
+#  points       :integer          default(0)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
