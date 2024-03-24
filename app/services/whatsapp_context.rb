@@ -63,7 +63,11 @@ class WhatsappContext
   def handle_global_keyword
     case global_keyword
     when :restart
-      @whatsapp.text('Demo is restarted. You can send any message to start again.')
+      if @user.destroy
+        @whatsapp.text('Demo is restarted. You can send any message to start again.')
+      else
+        @whatsapp.text('Sorry, I could not restart the demo. Please try again.')
+      end
     when :debug
       @whatsapp.text('Debugging...')
     end

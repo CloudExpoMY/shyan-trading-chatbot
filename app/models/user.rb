@@ -14,4 +14,6 @@ class User < ApplicationRecord
   has_one :conversation, dependent: :destroy
 
   validates :phone_number, presence: true, uniqueness: true
+
+  delegate :current_step, to: :conversation, allow_nil: true
 end
