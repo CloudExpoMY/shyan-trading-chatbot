@@ -52,6 +52,8 @@ class WhatsappMethods
   private
 
   def execute_whatsapp(message_content)
+    api_token = ENV.fetch('META_API_TOKEN') { Rails.application.credentials.dig(:facebook, :access_token) }
+
     response = HTTParty.post(
       "https://graph.facebook.com/v19.0/#{@wa_id}/messages",
       body: {
@@ -60,7 +62,7 @@ class WhatsappMethods
       }.merge(message_content).to_json,
       headers: {
         'Content-Type' => 'application/json',
-        'Authorization' => "Bearer #{Rails.application.credentials.dig(:facebook, :access_token)}"
+        'Authorization' => "Bearer #{api_token}"
       }
     )
 
