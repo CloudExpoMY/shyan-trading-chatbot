@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ShyanTrading
+module LoyaltyProgram
   class Application < Rails::Application
     config.to_prepare do
       Dir.glob(Rails.root.join('app/decorators/**/*.rb')).each { |c| require_dependency(c) }

@@ -21,13 +21,13 @@ default: &default
 
 development:
   <<: *default
-  database: shyan_trading_server_development
+  database: loyalty_chatbot_development
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: shyan_trading_server
+  #username: loyalty_chatbot
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -55,7 +55,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: shyan_trading_server_test
+  database: loyalty_chatbot_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -79,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: shyan_trading_server_production
-  username: shyan_trading_server
-  password: <%= ENV["shyan_trading_server_DATABASE_PASSWORD"] %>
+  database: loyalty_chatbot_production
+  username: loyalty_chatbot
+  password: <%= ENV["loyalty_chatbot_DATABASE_PASSWORD"] %>

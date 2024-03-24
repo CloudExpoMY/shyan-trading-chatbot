@@ -127,6 +127,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     font-awesome-sass (6.5.1)
       sassc (~> 2.0)
@@ -344,6 +346,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  faker
   httparty (~> 0.21.0)
   importmap-rails
   jbuilder

@@ -23,6 +23,7 @@ end
 group :development do
   gem 'annotate'
   gem 'web-console'
+  gem 'faker'
 end
 
 group :test do

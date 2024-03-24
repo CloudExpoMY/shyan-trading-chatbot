@@ -77,7 +77,7 @@ class WhatsappContext
     elsif reply == Conversation.lobby_menus[1]
       step_redeem_points_prompt
     elsif Conversation.prize_menus.include?(reply)
-      @whatsapp.text("You have successfully redeemed your points for a prize. Here is your reload ID:\n*#{SecureRandom.hex(5)}*\nPlease keep this ID safe and use it to redeem your prize.")
+      @whatsapp.text("You have successfully redeemed your points for a prize. Here is your reload ID:\n*#{SecureRandom.hex(5).upcase}*\nPlease keep this ID safe and use it to redeem your prize.")
       step_lobby_menu
     else
       try_again_prompt
