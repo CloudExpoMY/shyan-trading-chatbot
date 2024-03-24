@@ -16,13 +16,13 @@
 
 # seed 10 fake users
 
-10.times do
-  User.create(
-    email: Faker::Internet.email,
-    full_name: Faker::Name.name,
-    phone_number: Faker::PhoneNumber.cell_phone
-  )
-end
+# 10.times do
+#   User.create(
+#     email: Faker::Internet.email,
+#     full_name: Faker::Name.name,
+#     phone_number: Faker::PhoneNumber.cell_phone
+#   )
+# end
 
 AdminUser.create(email: 'admin@cloudexpo.my', password: 'cloudexpoadmin',
                  password_confirmation: 'cloudexpoadmin')

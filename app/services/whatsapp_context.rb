@@ -63,7 +63,7 @@ class WhatsappContext
   def handle_global_keyword
     case global_keyword
     when :restart
-      @whatsapp.text('Restart Triggered')
+      @whatsapp.text('Demo is restarted. You can send any message to start again.')
     when :debug
       @whatsapp.text('Debugging...')
     end
@@ -155,17 +155,9 @@ class WhatsappContext
   end
 
   def global_keyword
-    restart_keywords = [
-      'restart',
-      'reset',
-      'start over',
-      'start again',
-      'restart conversation',
-      'reset conversation',
-      'start over conversation',
-      'start again conversation',
-      'main menu',
-      'menu'
+    restart_keywords = %w[
+      restart
+      reset
     ]
 
     if @msg_body == 'DEBUG'
